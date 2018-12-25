@@ -7,8 +7,9 @@ function updateTime() { //for the websites timer
 
 //Query Dom-------------------------------------------
 var message = document.getElementById("message");
-var handle = document.getElementById('handle');
+// var handle = document.getElementById('handle'); //not necessary, 
 var username = document.getElementsByClassName('member-name');
+actualUsername = username[0];
 var btn = document.getElementById('send');
 var output = document.getElementById('output');
 var feedback = document.getElementById('feedback');
@@ -17,6 +18,9 @@ var feedback = document.getElementById('feedback');
 
 $(document).on("ready", function () {
     console.log(username);
+    console.log(username[0]);
+    console.log(username);
+    
     setInterval(updateTime, 1000);
     //emit events
     //so check this out
@@ -27,13 +31,13 @@ $(document).on("ready", function () {
     btn.addEventListener('click', function () {
         socket.emit('chat', {
             message: message.value,
-            handle: username.value,
-            
-        })
+            handle: actualUsername,
+        });
+        console.log(actualUsername);
     })
 
     message.addEventListener('keypress', function () {
-        socket.emit('typing', handle.value);
+        socket.emit('typing', actualUsername);
     })
     //output.innerHTML += "<p><strong>" + data.handle + ": </strong>" + data.message + "<p>"
     //now listening for events, basically receiving the data from the server to client

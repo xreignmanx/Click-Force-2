@@ -39,7 +39,7 @@ db.sequelize.sync().then(function() {
 
   //listens for an event called connection which informs user when a connection is made, and callback a function thereafter
   io.on('connection', function(socket) {
-    console.log("made socket connectioftgrhn: " + socket.id);
+    console.log("made socket connection: " + socket.id);
 
     socket.on('disconnect', () => {
       console.log(`Socket ${socket.id} disconnected.`);
