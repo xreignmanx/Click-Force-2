@@ -39,14 +39,25 @@ db.sequelize.sync().then(function() {
 
   //listens for an event called connection which informs user when a connection is made, and callback a function thereafter
   io.on('connection', function(socket) {
-    console.log("made socket connection: " + socket.id);
+    console.log("made socket connectioftgrhn: " + socket.id);
+
+    socket.on('disconnect', () => {
+      console.log(`Socket ${socket.id} disconnected.`);
+    });
+
+    socket.on('typing', function(data){ //this is to let everyone know whos typing
+      socket.broadcast.emit('typing', data) //this emits the person whos typing to everyone BUT the person whos actually typing
+    });
+
     //this portion is receiving the socket data sent on the frontend (asking for the 'chat' object) and firing a function with the data is has as a parameter
     socket.on('chat', function(data){
       //you do io.sockets and not socket because it is referring to ALL connections. not just that single one connection.
       io.sockets.emit('chat', data);
 
-    })
+    });
   }); //still requires socket.io on the frontend
+
+  
 });
 
 

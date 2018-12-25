@@ -67,3 +67,44 @@ button{
     width: 100%;
     border-radius: 0 0 2px 2px;
 }
+
+#timer{
+    /* font: 100; */
+    border: 1.2px solid black;
+    border-radius: 0 0 2px 2px;
+    color: black;
+}
+/* added a fade in for when the other users detect someone is typing! */
+@-webkit-keyframes
+fadein {
+    0% { opacity: 0;
+    };
+
+    100% { opacity: 1;
+    };
+}
+
+@-moz-keyframes fadein
+{
+    0% { opacity: 0;
+    
+    }
+    100% {opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    0% { opacity: 0;
+    };
+
+    100% { opacity: 1;
+    };
+}
+
+#feedback{
+    -webkit-animation: fadein 1.2s ease-in alternate infinite;
+    -moz-animation: fadein 1.2s ease-in alternate infinite;
+    animation: fadein 1.2s ease-in alternate infinite;
+}
+/* added a fade in for when the other users detect someone is typing! */
+
