@@ -74,6 +74,7 @@ button{
 
 #timer{
   /* font: 100; */
+  margin: 10px 10px 10px 10px;
   border: 1.2px solid black;
   border-radius: 0 0 2px 2px;
   color: black;

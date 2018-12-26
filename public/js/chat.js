@@ -1,5 +1,5 @@
 //Make the actual connection here, and in the index, we already have the library loaded;
-var socket = io.connect("http://localhost:8080" || process.env.PORT);
+var socket = io.connect("http://localhost:8080" || "http://localhost:"+process.env.PORT);
 
 function updateTime() { //for the websites timer
     $("#timer").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -9,17 +9,14 @@ function updateTime() { //for the websites timer
 var message = document.getElementById("message");
 // var handle = document.getElementById('handle'); //not necessary, 
 var username = document.getElementsByClassName('member-name');
-actualUsername = username[0];
 var btn = document.getElementById('send');
 var output = document.getElementById('output');
 var feedback = document.getElementById('feedback');
-//  var personalHandle = socket.io;
+
 //----------------------------------------------------
 
 $(document).on("ready", function () {
-    console.log(username);
-    console.log(username[0]);
-    console.log(username);
+    console.log(username);    
     
     setInterval(updateTime, 1000);
     //emit events
@@ -31,13 +28,13 @@ $(document).on("ready", function () {
     btn.addEventListener('click', function () {
         socket.emit('chat', {
             message: message.value,
-            handle: actualUsername,
+            handle: username[0].innerHTML,
         });
-        console.log(actualUsername);
+    
     })
 
     message.addEventListener('keypress', function () {
-        socket.emit('typing', actualUsername);
+        socket.emit('typing', username[0].innerHTML);
     })
     //output.innerHTML += "<p><strong>" + data.handle + ": </strong>" + data.message + "<p>"
     //now listening for events, basically receiving the data from the server to client
