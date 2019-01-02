@@ -37,7 +37,7 @@ nodemailer.createTestAccount((err, account) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"The Diamond Group 👻" <lppernell1998@gmail.com>', // sender address
-        to: 'o5870957@nwytg.net',//lppernell1998@gmail.com', // list of receivers
+        to: 'o6460617@nwytg.net',//lppernell1998@gmail.com', // list of receivers
         subject: 'Authenticate Your Account Now! ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<h1>Hello New User!</h1><b>Welcome to the game of click force!<hr>Click the link below to authenticate your new account!</b>' // html body
