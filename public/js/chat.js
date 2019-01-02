@@ -30,6 +30,8 @@ $(document).on("ready", function () {
             message: message.value,
             handle: username[0].innerHTML,
         });
+       
+        $(message).html(" ");
     
     })
 

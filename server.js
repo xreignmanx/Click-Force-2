@@ -60,4 +60,27 @@ db.sequelize.sync().then(function() {
   
 });
 
+/** Just in case I can actually get this far in this
+ * app.post('/contact',(req,res)=>{
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'user@gmail.com',
+        password: 'password'
+    }
+});
+var mailOptions = {
+    from: req.body.name + '&lt;' + req.body.email + '&gt;',
+    to: 'bantspl@gmail.com',
+    subject: 'Plbants Feedback',
+    text: req.body.feedback 
+};
+transporter.sendMail(mailOptions,(err,res)=>{
+    if(err){
+        console.log(err);
+    }
+    else {
 
+    }
+});
+ */
