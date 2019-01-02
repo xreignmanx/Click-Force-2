@@ -2,3 +2,38 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  font-family: 'Fondamento', cursive;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 450%;
+}
+
+label {
+  font-size: 200%;
+}
+
+#loginMain {
+  background-image: url("../assets/img/wall.jpg");
+  align-content: center;
+  background-size: 100%;
+}
+ #loginForm {
+   background-image: url("../assets/img/sign.png");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   align-content: center;
+ }
+ #button1 {
+   color: black;
+ }
+ #button2 {
+   color: rgb(194, 40, 12);
+  }
+ 

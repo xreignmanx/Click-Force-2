@@ -1,0 +1,11 @@
+api-routes.js for what the database takes after the signup button is pressed
+
+html-routes.js for general html redirects.
+
+rn on nodemailer:
+1. get an email to send to the default in the documentation (y)
+2. get an email to send to my djtriet email.
+3. Have a button on an html page send the verification email.
+4. Attach to signup page and upon the user logging in, have the email send (SECRET TOKEN not necessary)
+5. Change the authentication javascript page so that it make the user an authenticated user only after clicking the secret token sent to the email.
+6. look at the documentation for passport.js (cause I dont know that shit) 

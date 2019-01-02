@@ -1,3 +1,36 @@
-.list-group-item {
-  line-height: 2.5;
+
+form.signup,
+form.login {
+  margin-top: 50px;
 }
+
+body {
+  font-family: 'Fondamento', cursive;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 350%;
+}
+
+label {
+  font-size: 200%;
+}
+
+#loginMain {
+  background-image: url("../assets/img/wall.jpg");
+  align-content: center;
+  background-size: 100%;
+}
+ #loginForm {
+   background-image: url("../assets/img/sign.png");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   align-content: center;
+ }
+ #buttonA {
+   color: black;
+ }
