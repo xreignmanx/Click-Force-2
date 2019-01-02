@@ -7,7 +7,7 @@ function updateTime() { //for the websites timer
 
 //Query Dom-------------------------------------------
 var message = document.getElementById("message");
-// var handle = document.getElementById('handle'); //not necessary, 
+// var handle = document.getElementById('handle'); //not necessary, the user's login is their handle
 var username = document.getElementsByClassName('member-name');
 var btn = document.getElementById('send');
 var output = document.getElementById('output');
@@ -16,7 +16,7 @@ var feedback = document.getElementById('feedback');
 //----------------------------------------------------
 
 $(document).on("ready", function () {
-    console.log(username);    
+    //console.log(username);    
     
     setInterval(updateTime, 1000);
     //emit events
@@ -30,9 +30,7 @@ $(document).on("ready", function () {
             message: message.value,
             handle: username[0].innerHTML,
         });
-       
-        $(message).html(" ");
-    
+        
     })
 
     message.addEventListener('keypress', function () {
@@ -53,13 +51,10 @@ $(document).on("ready", function () {
         //It creates a method to show other users whos typing
         socket.on('chat', function (data) {
             $(feedback).html("");
-            $(message).html("");
         }); //the purpose of this is only to clear it
     })
 
 })
-
-//Move this socket connection shit to the actual html login html. 
 
 //Upon logging in, I want the login to request a specific name from the database if the email and password are in the same row or match the same id.
 //The server would then have to return that and rather than posting that socket id, the username instead, and that would include that same name being used for that little chat, rahter than entering a your handle every single time
