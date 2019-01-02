@@ -1,3 +1,4 @@
+
 form.signup,
 form.login {
   margin-top: 50px;
@@ -12,7 +13,7 @@ h1 {
   text-align: center;
   color: white;
   font-weight: bolder;
-  font-size: 450%;
+  font-size: 350%;
 }
 
 label {
@@ -30,10 +31,6 @@ label {
    background-repeat: no-repeat;
    align-content: center;
  }
- #button1 {
+ #buttonA {
    color: black;
  }
- #button2 {
-   color: rgb(194, 40, 12);
-  }
- 
