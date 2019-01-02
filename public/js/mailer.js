@@ -21,10 +21,10 @@ nodemailer.createTestAccount((err, account) => {
             pass: process.env.GMAIL_PASS //account.pass // generated ethereal password
 
             /*
-            clientID: is the registered client id of the application
-            clientSecret: the registered client secret of the application
-            expires: an optional expiration time for the current accessToken
-            refreshToken: an optional refresh token, like resets one if the other one expires of fails
+            clientID: is the registered client id of the application,
+            clientSecret: the registered client secret of the application,
+            expires: an optional expiration time for the current accessToken,
+            refreshToken: an optional refresh token, like resets one if the other one expires of fails,
             accessToken: the access token for the user, you need it if refreshtoken doesn't work 
             */
 
@@ -36,8 +36,8 @@ nodemailer.createTestAccount((err, account) => {
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"The Diamond Group 👻" <lppernell1998@gmail.com>', // sender address
-        to: 'o6460617@nwytg.net',//lppernell1998@gmail.com', // list of receivers
+        from: '"The Diamond Group 👻" <TDMCF@clickforce.com', // sender address
+        to: 'o6470331@nwytg.net',//lppernell1998@gmail.com', // list of receivers
         subject: 'Authenticate Your Account Now! ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<h1>Hello New User!</h1><b>Welcome to the game of click force!<hr>Click the link below to authenticate your new account!</b>' // html body
