@@ -1,13 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
  var scoreBoard = sequelize.define("scoreBoard", {
    User: {type: DataTypes.STRING}, 
-   Socre: {type: DataTypes.INTERGER},
-   HighSocre: {type: DataTypes.INTERGER},
-   Gold: {type: DataTypes.INTERGER},
-   TotalGold: {type: DataTypes.INTERGER},
-   UserTime: {type: DataTypes.INTERGER},
-   TotalTime: {type: DataTypes.INTERGER},
-   Games: {type: DataTypes.INTERGER},
+   Score: {type: DataTypes.INTEGER},
+   HighScore: {type: DataTypes.INTEGER},
+   Gold: {type: DataTypes.INTEGER},
+   TotalGold: {type: DataTypes.INTEGER},
+   UserTime: {type: DataTypes.INTEGER},
+   TotalTime: {type: DataTypes.INTEGER},
+   Games: {type: DataTypes.INTEGER},
   });
   return scoreBoard;
 };
