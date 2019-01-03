@@ -51,5 +51,29 @@ module.exports = function(app) {
       });
     }
   });
+  // Route for getting high score data from unity
+  app.post("/api/scoreboard", function (req, res) {
+    console.log(req.body);
+    db.scoreBoard.create({
+      User: req.body.user,
+      Score: req.body.score,
+      HighScore: req.body.score,
+      Gold: req.body.gold,
+      TotalGold: req.body.gold,
+      Time: req.body.time,
+      TotalTime: req.body.time,
+      Game: 1
+    }).catch(function (err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.get("/api/scoreboard", function (req, res) {
+    db.User.findAll({}).then(function (results) {
+      console.log(res.json({}));
+      res.json({});
+    });
+  })
 
 };
