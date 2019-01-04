@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var scoreBoard;
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -60,9 +61,12 @@ module.exports = function(app) {
       HighScore: req.body.score,
       Gold: req.body.gold,
       TotalGold: req.body.gold,
-      Time: req.body.time,
+      UserTime: req.body.time,
       TotalTime: req.body.time,
-      Game: 1
+      Games: 1
+    }).then(function(dbSwitch){
+
+      res.send(dbSwitch);
     }).catch(function (err) {
       console.log(err);
       res.json(err);
@@ -70,9 +74,12 @@ module.exports = function(app) {
   });
 
   app.get("/api/scoreboard", function (req, res) {
-    db.User.findAll({}).then(function (results) {
-      console.log(res.json({}));
-      res.json({});
+    
+    db.scoreBoard.findAll({
+    }).then(function (results) {
+      scoreBoard = Object.assign({}, results);
+      res.json(scoreBoard);
+      console.log(scoreBoard);
     });
   })
 
