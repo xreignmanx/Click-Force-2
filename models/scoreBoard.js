@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
  var scoreBoard = sequelize.define("scoreBoard", {
-   User: DataTypes.STRING,
+   User: {type: DataTypes.STRING}, 
    Score: {type: DataTypes.INTEGER},
    HighScore: {type: DataTypes.INTEGER},
    Gold: {type: DataTypes.INTEGER},

@@ -22,6 +22,7 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
+      //you could also create a potential username section if we so choose to add that as a column in the database.
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
