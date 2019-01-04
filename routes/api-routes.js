@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-var mailer = require('../public/js/mailer');
+var scoreBoard;
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -101,5 +101,35 @@ module.exports = function(app) {
       });
     }
   });
+  // Route for getting high score data from unity
+  app.post("/api/scoreboard", function (req, res) {
+    console.log(req.body);
+    db.scoreBoard.create({
+      User: req.body.user,
+      Score: req.body.score,
+      HighScore: req.body.score,
+      Gold: req.body.gold,
+      TotalGold: req.body.gold,
+      UserTime: req.body.time,
+      TotalTime: req.body.time,
+      Games: 1
+    }).then(function(dbSwitch){
+
+      res.send(dbSwitch);
+    }).catch(function (err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.get("/api/scoreboard", function (req, res) {
+    
+    db.scoreBoard.findAll({
+    }).then(function (results) {
+      scoreBoard = Object.assign({}, results);
+      res.json(scoreBoard);
+      console.log(scoreBoard);
+    });
+  })
 
 };

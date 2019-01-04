@@ -95,7 +95,6 @@ function listLabels(auth) {
 
 // might need this: https://www.youtube.com/redirect?v=YU3qstG74nw&redir_token=iBxCZce_o3DaxvPIpvnvf57xvRh8MTU0NTg3MDIwNEAxNTQ1NzgzODA0&event=video_description&q=https%3A%2F%2Fwww.google.com%2Fsettings%2Fsecurity%2Flesssecureapps
 
-
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com', //originally, it was "smtp.ethereal.email"
@@ -103,7 +102,6 @@ let transporter = nodemailer.createTransport({
     secure: true,
     //we removed the port number and the secure statment because those were strictly for receiving on nodemailer's end
     auth: {
-
         type: 'OAuth2',
 
         user: 'lppernell1998@gmail.com',
