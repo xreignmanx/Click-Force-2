@@ -30,7 +30,7 @@ $(document).ready(function() {
     }).then(function(data) {
       window.location.replace(data);
       // If there's an error, log the error
-    }).catch(function(err) {
+    }).then(function(err) {
       console.log(err);
     });
   }

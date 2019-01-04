@@ -5,6 +5,18 @@
   #chat-area{
     font-family: 'Nunito';
   }
+  header{
+    background: black;
+  }
+
+  #timer{
+    border: 1.3px solid black;
+    background: white;
+  }
+
+  body{
+    background-image: url(../assets/img/wall.jpg);
+  }
   
   h2{
     font-size: 18px;

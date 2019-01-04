@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   app.get("/playGame", isAuthenticated, function(req, res) {
     if (req.user) {
-      res.sendFile(path.join(__dirname, "../public/Builsd/index.html"));
+      res.sendFile(path.join(__dirname, "../public/Builds/index.html"));
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });

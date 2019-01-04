@@ -39,8 +39,8 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2><hr>
-        <a href='Builds\index.html'>Play Game</a>
-        <h2>Welcome <span id="memberName" class="member-name"></span></h2>
+
+        <button><a href='Builds\index.html'>Play Game</a></button>
       </div>
     </div>
   </div>
@@ -61,6 +61,13 @@
   
   <script type="text/javascript" src="js/members.js"></script>
   <script src="js/chat.js"></script>
+  
+  <script>
+    $("#send").on('click', function(){
+      event.preventDefault();
+      $("#message").html("");
+    })
+  </script>
 
 </body>
 

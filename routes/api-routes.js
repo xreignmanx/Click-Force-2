@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var mailer = require('../public/js/mailer');
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -24,12 +25,59 @@ module.exports = function(app) {
       //you could also create a potential username section if we so choose to add that as a column in the database.
     }).then(function() {
       res.redirect(307, "/api/login");
-    }).catch(function(err) {
+    }).then(function(err) {
       console.log(err);
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
   });
+
+  app.post("/send", function(req, res) {
+    if (err) throw err;
+    console.log(req.body);
+    const output = `
+    <p>You have an account creation request</p>
+    <h3>Account Details: </h3>
+    <ul>
+      <li>Email: ${req.body.email}</li>
+      <li>Password: ${req.body.password}</li>
+    </ul>
+    `;
+
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+          user: 'UCFclickforce@gmail.com', // generated ethereal user
+          pass: '123abcPie' // generated ethereal password
+      }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: '"Fred Foo 👻" <foo@example.com>', // sender address
+      to: 'bar@example.com, baz@example.com', // list of receivers
+      subject: 'Hello ✔', // Subject line
+      text: 'Hello world?', // plain text body
+      html: '<b>Hello world?</b>' // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+      // Preview only available when sending through an Ethereal account
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  });
+
+
+  })
 
   // Route for logging user out
   app.get("/logout", function(req, res) {

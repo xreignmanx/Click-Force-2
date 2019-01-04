@@ -26,7 +26,6 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
   //Necessary for the Socket.IO functionality:
@@ -53,6 +52,7 @@ db.sequelize.sync().then(function() {
     socket.on('chat', function(data){
       //you do io.sockets and not socket because it is referring to ALL connections. not just that single one connection.
       io.sockets.emit('chat', data);
+      console.log(data.handle + " said: "+ data.message);
 
     });
   }); //still requires socket.io on the frontend
