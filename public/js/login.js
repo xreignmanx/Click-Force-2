@@ -6,12 +6,14 @@ $(document).ready(function() {
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
+  
+    
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
+    
     if (!userData.email || !userData.password) {
       return;
     }
@@ -28,10 +30,14 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
+      console.log("This is the route = " + data);
+      
       window.location.replace(data);
+
       // If there's an error, log the error
     }).then(function(err) {
       console.log(err);
+
     });
   }
 
