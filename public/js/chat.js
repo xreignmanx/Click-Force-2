@@ -25,7 +25,13 @@ $(document).on("ready", function () {
     //this listener waits for the click on the "btn" , and then calls a function which
     //handles a socket function called emit. socket.emit takes 2 variable, What the object is(the name), and the information contained within that object
     //which we will define.
+
+    // $(btn).on('click', function(){
+    //     $('#message').html("")
+    // })
+
     btn.addEventListener('click', function () {
+        
         socket.emit('chat', {
             message: message.value,
             handle: username[0].innerHTML,
