@@ -99,7 +99,7 @@ function listLabels(auth) {
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com', //originally, it was "smtp.ethereal.email"
-    port: 587, //465 || 587
+    port: 465, //465 || 587
     secure: true,
     //we removed the port number and the secure statment because those were strictly for receiving on nodemailer's end
     auth: {
@@ -107,11 +107,11 @@ let transporter = nodemailer.createTransport({
         type: 'OAuth2',
 
         user: 'lppernell1998@gmail.com',
-        pass: 'Soleisdabest1@12',
-        clientId: process.env.GMAIL_CLIENTID,
-        clientSecret: process.env.GMAIL_CLIENTSECRET,
-        refreshToken: process.env.GMAIL_REFRESHTOKEN,
-        accessToken: process.env.GMAIL_ACCESSTOKEN
+        pass: 'Soleisdabest1@12'
+        // clientId: '1030555977796-p6kepqmu0bonrh5c9g0gp2cueaqn0gcs.apps.googleusercontent.com',
+        // clientSecret: 'MBprg4VQ7QyGATMtyPNYLyGp',
+        // refreshToken: process.env.GMAIL_REFRESHTOKEN,
+        // accessToken: process.env.GMAIL_ACCESSTOKEN
 
         /*
         clientID: is the registered client id of the application
@@ -123,14 +123,15 @@ let transporter = nodemailer.createTransport({
 
     },
     tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        secureProtocol: "TLSv1_method"
     }
 });
 
 // setup email data with unicode symbols
 let mailOptions = {
-    from: '"The Diamond Group 👻" <clickforce@gmail.com>', // sender address
-    to: 'o6460617@nwytg.net',//lppernell1998@gmail.com', // list of receivers
+    from: '"The Diamond Group 👻" <lppernell1998@gmail.com>', // sender address
+    to: 'lppernell1998@gmail.com',//lppernell1998@gmail.com', // list of receivers
     subject: 'Authenticate Your Account Now! ✔', // Subject line
     text: 'Hello world?', // plain text body
     html: '<h1>Hello New User!</h1><b>Welcome to the game of click force!<hr>Click the link below to authenticate your new account!</b>' // html body

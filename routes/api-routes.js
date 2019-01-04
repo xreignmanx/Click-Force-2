@@ -35,46 +35,47 @@ module.exports = function(app) {
   app.post("/send", function(req, res) {
     if (err) throw err;
     console.log(req.body);
-    const output = `
-    <p>You have an account creation request</p>
-    <h3>Account Details: </h3>
-    <ul>
-      <li>Email: ${req.body.email}</li>
-      <li>Password: ${req.body.password}</li>
-    </ul>
-    `;
 
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-          user: 'UCFclickforce@gmail.com', // generated ethereal user
-          pass: '123abcPie' // generated ethereal password
-      }
-  });
+  //   const output = `
+  //   <p>You have an account creation request</p>
+  //   <h3>Account Details: </h3>
+  //   <ul>
+  //     <li>Email: ${req.body.email}</li>
+  //     <li>Password: ${req.body.password}</li>
+  //   </ul>
+  //   `;
 
-  // setup email data with unicode symbols
-  let mailOptions = {
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: 'bar@example.com, baz@example.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world?', // plain text body
-      html: '<b>Hello world?</b>' // html body
-  };
+  //   let transporter = nodemailer.createTransport({
+  //     host: 'smtp.gmail.com',
+  //     port: 587,
+  //     secure: false, // true for 465, false for other ports
+  //     auth: {
+  //         user: 'UCFclickforce@gmail.com', // generated ethereal user
+  //         pass: '123abcPie' // generated ethereal password
+  //     }
+  // });
 
-  // send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-          return console.log(error);
-      }
-      console.log('Message sent: %s', info.messageId);
-      // Preview only available when sending through an Ethereal account
-      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  // // setup email data with unicode symbols
+  // let mailOptions = {
+  //     from: '"Click Force! 👻" <ucfclickforce@gmail.com>', // sender address
+  //     to: req.body.email, // list of receivers
+  //     subject: 'Authentication', // Subject line
+  //     text: 'Hello New User!', // plain text body
+  //     html: output // html body
+  // };
 
-      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  });
+  // // send mail with defined transport object
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //     if (error) {
+  //         return console.log(error);
+  //     }
+  //     console.log('Message sent: %s', info.messageId);
+  //     // Preview only available when sending through an Ethereal account
+  //     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+  //     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+  //     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  // });
 
 
   })
