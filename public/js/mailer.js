@@ -121,7 +121,7 @@ let transporter = nodemailer.createTransport({
 
     },
     tls: {
-        rejectUnauthorized: false,
+        // rejectUnauthorized: false,
         secureProtocol: "TLSv1_method"
     }
 });
