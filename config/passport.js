@@ -18,6 +18,7 @@ passport.use(new LocalStrategy(
     }).then(function(dbUser) {
       // If there's no user with the given email
       if (!dbUser) {
+        alert("password is incorrect");
         return done(null, false, {
           message: "Incorrect email."
         });
@@ -25,7 +26,13 @@ passport.use(new LocalStrategy(
       // If there is a user with the given email, but the password the user gives us is incorrect
       else if (!dbUser.validPassword(password)) {
         return done(null, false, {
-          message: "Incorrect password."
+          message: "Incorrect password.",
+        });
+      }
+
+      else if (dbUser.authenticated == 0) {
+        return done(null, false, {
+          message: "You need to verify this account."
         });
       }
       // If none of the above, return the user
