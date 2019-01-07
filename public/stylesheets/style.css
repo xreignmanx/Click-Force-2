@@ -1,23 +1,31 @@
+@font-face {
+  font-family: blackwoodCastle;
+  src: url("../assets/font/blackwoodCastle.ttf");
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
 body {
-  font-family: 'Fondamento', cursive;
-  color: white;
+  font-family: blackwoodCastle;
+  color: black;
+  text-shadow: 2px 2px silver;
+
   
 }
 
 h1 {
   text-align: center;
-  color: white;
-  font-weight: bolder;
-  font-size: 450%;
+  color: black;
+  font-size: 750%;
+  text-shadow: 2px 2px silver;
+
 }
 
 label {
-  font-size: 200%;
+  font-size: 300%;
 }
 
 #loginMain {
@@ -31,10 +39,35 @@ label {
    background-repeat: no-repeat;
    align-content: center;
  }
+ #buttons {
+  text-align: center; 
+ }
  #button1 {
-   color: black;
+   color: green;
+   text-shadow: 2px 2px black;
+   font-size: 36px;
+   
  }
  #button2 {
-   color: rgb(194, 40, 12);
+   color: gold;
+   text-shadow: 2px 2px black;
+   font-size: 36px;
+   text-align: center;
+
   }
- 
+ #email-input {
+  background: transparent;
+  border: none;
+  font-size: 200%;
+  text-shadow: 2px 2px black;
+
+
+ }
+ #password-input {
+  background: transparent;
+  border: none;
+  font-size: 200%;
+  text-shadow: 2px 2px black;
+
+
+ }
