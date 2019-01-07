@@ -1,5 +1,5 @@
 //Make the actual connection here, and in the index, we already have the library loaded;
-var socket = io.connect("http://localhost:8080" || "http://localhost:"+process.env.PORT);
+var socket = io.connect("http://localhost:8080" || "http://localhost:"+ process.env.PORT);
 
 function updateTime() { //for the websites timer
     $("#timer").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
