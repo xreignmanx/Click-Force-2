@@ -7,4 +7,5 @@ module.exports = function(req, res, next) {
 
   // If the user isn't' logged in, redirect them to the login page
   return res.redirect("/");
+  //alert('please authenticate your account, check your email for a token')
 };

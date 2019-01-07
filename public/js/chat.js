@@ -57,6 +57,7 @@ $(document).on("ready", function () {
         //It creates a method to show other users whos typing
         socket.on('chat', function (data) {
             $(feedback).html("");
+            $(message).val("")
         }); //the purpose of this is only to clear it
     })
 

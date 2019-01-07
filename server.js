@@ -7,6 +7,12 @@ var passport = require("./config/passport");
 //requiring socket after npm installation;
 var socket = require('socket.io');
 
+//generating a random token for a user using randomstring
+var randomstring = require('randomstring');
+
+//export so that it can be used in user.js
+module.exports = randomstring.generate();
+
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
@@ -56,31 +62,4 @@ db.sequelize.sync().then(function() {
 
     });
   }); //still requires socket.io on the frontend
-
-  
 });
-
-/** Just in case I can actually get this far in this
- * app.post('/contact',(req,res)=>{
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'user@gmail.com',
-        password: 'password'
-    }
-});
-var mailOptions = {
-    from: req.body.name + '&lt;' + req.body.email + '&gt;',
-    to: 'bantspl@gmail.com',
-    subject: 'Plbants Feedback',
-    text: req.body.feedback 
-};
-transporter.sendMail(mailOptions,(err,res)=>{
-    if(err){
-        console.log(err);
-    }
-    else {
-
-    }
-});
- */
