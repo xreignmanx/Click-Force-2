@@ -7,6 +7,7 @@ function updateTime() { //for the websites timer
 
 //Query Dom-------------------------------------------
 var message = document.getElementById("message");
+var usermessage = $("#message");
 // var handle = document.getElementById('handle'); //not necessary, the user's login is their handle
 var username = document.getElementsByClassName('member-name');
 var btn = document.getElementById('send');
@@ -36,6 +37,8 @@ $(document).on("ready", function () {
             message: message.value,
             handle: username[0].innerHTML,
         });
+
+        usermessage.val("");
         
     })
 

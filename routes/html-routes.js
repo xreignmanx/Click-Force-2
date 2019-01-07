@@ -8,10 +8,11 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
-
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
-
 
   app.get("/verify", function(req, res) {
     
@@ -24,21 +25,11 @@ module.exports = function(app) {
   })
 
   app.get("/login", function(req, res) {
-    if (req.user) {
-      res.redirect('/members');
-    }
-
-    res.sendFile(path.join(__dirname, "../public/verify.html"));
-  })
-
-  app.get("/signup", function(req, res) {
-    
-    if (req.user) {
-      res.redirect('/members');
-    }
     // If the user already has an account send them to the members page
-
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -49,8 +40,9 @@ module.exports = function(app) {
 
   app.get("/playGame", isAuthenticated, function(req, res) {
     if (req.user) {
-      res.sendFile(path.join(__dirname, "../public/gamepage.html"));
+      res.sendFile(path.join(__dirname, "../public/Builds/index.html"));
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
-}
+
+};
