@@ -125,9 +125,9 @@ module.exports = function(app) {
   app.get("/api/scoreboard", function (req, res) {
     
     db.scoreBoard.findAll({
-    }).then(function (results) {
+      limit: 10}).then(function (results) {
       scoreBoard = Object.assign({}, results);
-      res.json(scoreBoard);
+      res.json(results);
       console.log(scoreBoard);
     });
   })
