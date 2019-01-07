@@ -12,7 +12,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-<<<<<<< HEAD
+
   app.get("/verify", function(req, res) {
     
     if (req.user) {
@@ -24,9 +24,18 @@ module.exports = function(app) {
   })
 
   app.get("/login", function(req, res) {
-=======
+    if (req.user) {
+      res.redirect('/members');
+    }
+
+    res.sendFile(path.join(__dirname, "../public/verify.html"));
+  })
+
   app.get("/signup", function(req, res) {
->>>>>>> master
+    
+    if (req.user) {
+      res.redirect('/members');
+    }
     // If the user already has an account send them to the members page
 
     res.sendFile(path.join(__dirname, "../public/signup.html"));
@@ -44,5 +53,4 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
-
-};
+}
