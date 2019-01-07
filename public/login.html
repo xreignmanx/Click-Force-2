@@ -6,18 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Fondamento" rel="stylesheet">
   <script src="https://code.jquery.com/jquery.js"></script>
   <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
-<body id="loginMain">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+<body id="loginMain" class="wrapper animated fadeIn">
+<br><br><br>
   <div class="container">
     <div class="row" id="loginForm">
       <div class="col-xs-1 col-sm-1 col-md-1"></div>
@@ -25,7 +21,7 @@
     
               <form class="login">
                 <br><br>
-                <h1>=CLICK= =FORCE=</h1>
+                <h1>CLICK FORCE</h1>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Your Place of Mischievious Doings</label>
                   <input type="email" class="form-control" id="email-input" placeholder="NinnyHen@someplace.com">
@@ -34,9 +30,10 @@
                   <label for="exampleInputPassword1">Magical Word of Passage</label>
                   <input type="password" class="form-control" id="password-input" placeholder="ABACADABARA"> 
                 </div>
-                <div>
-                  <button type="submit" id="button1"  class="btn btn-success">ENTER KINGDOM!</button>
-                  <a class="btn btn-default" id="button2" href="./signup.html" role="button">REQUEST ADMITTANCE</a>
+                <div class="row" id="buttons">
+                    <div class="col-xs-6 col-sm-6 col-md-6"><a type="submit" id="button1">ENTER!</div>               
+                    <div class="col-xs-6 col-sm-6 col-md-6"><a id="button2" href="./signup.html" role="button">REGISTER</a></div>               
+                 
                 <br><br><br><br>
               </form>
                 
@@ -47,8 +44,11 @@
 
   <script type="text/javascript" src="js/login.js"></script>
   <!-- <audio src="assets/sounds/Signon.mp3" loop="true" hidden="true" autostart="true" type="audio/mp3"></audio>   -->
-  <audio autoplay loop><source src="assets/sounds/Signon.mp3"></audio>
+  <!-- <audio autoplay loop><source src="assets/sounds/Signon.mp3"></audio> -->
+    <audio autoplay hidden loop> 
+        <source src="assets/sounds/Signon.mp3">
 
+      </audio>
 
 
 </body>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Passport Registration</title>
+  <title>Registration</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
@@ -13,54 +13,49 @@
 
 </head>
 
-<body id="loginMain" class="wrapper animated bounceInLeft">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+<body id="loginMain" class="wrapper animated fadeIn">
+<br><br><br>
   <div class="container">
     <div class="row" id="loginForm">
-      <div class="col-xs-1 col-sm-1 col-md-1"></div>
-      <div class="col-xs-10 col-sm-10 col-md-10">
+      
+      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+      <div class="col-xs-8 col-sm-8 col-md-8">
 
         <form id="signup" class="login" method="POST" action="send">
           <br><br>
           <h1>WHO ARE YOU????</h1>
           <div class="form-group">
-            <label for="exampleInputEmail1">Scrawl your Address of Mischievious Doings</label>
-            <input type="email" class="form-control" id="email-input" placeholder="NinnyHen@someplace.com">
+            <label for="exampleInputEmail1">Address of Mischievious Doings</label>
+            <input type="email" class="form-control" id="email-input" placeholder="SCRAWL EMAIL">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Create a Magical Word of Passage</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Abracadabra">
+            <input type="password" class="form-control" id="password-input" placeholder="ABRACADABRA">
           </div>
-          <div>
-            <button type="submit" id="buttonA" class="btn btn-success" href="members.html">JOIN THE MAYHEM!</button>
+          <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4"></div>
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                <a type="submit" id="buttonA"  href="members.html">JOIN THE MAYHEM!</a>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4"></div>
+
+          </div>
+
+                 
+
             <br><br><br><br>
         </form>
 
 
       </div>
-      <div class="col-xs-1 col-sm-1 col-md-1"></div>
+      <div class="col-xs-2 col-sm-2 col-md-2"></div>
     </div>
   </div>
 
 
   <script type="text/javascript" src="js/signup.js"></script>
   
-  <script>
-    $("#buttonA").on("click", function(){
-      event.preventDefault();
-      
-      // window.location.href = "http://localhost:8080/login";
-    })
-    $("#buttonB").on("click", function(){
-      event.preventDefault();
-      window.location.href = "http://localhost:8080/signup";
-    })
-  </script>
+
 
 </body>
 
