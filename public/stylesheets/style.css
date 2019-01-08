@@ -58,16 +58,18 @@ label {
  #email-input {
   background: transparent;
   border: none;
-  font-size: 200%;
-  text-shadow: 2px 2px black;
+  font-size: 300%;
+  text-shadow: 2px 2px blue;
+  color: black;
 
 
  }
  #password-input {
   background: transparent;
   border: none;
-  font-size: 200%;
-  text-shadow: 2px 2px black;
+  font-size: 300%;
+  text-shadow: 2px 2px blue;
+  color: black;
 
 
  }

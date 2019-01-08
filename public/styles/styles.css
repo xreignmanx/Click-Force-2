@@ -10,32 +10,34 @@ form.login {
 
 body {
   font-family: blackwoodCastle;
-  color: rgb(54, 54, 54);
-  text-shadow: 2px 2px black;
+  color: blue;
+  text-shadow: 2px 2px gold ;
 
 }
 
 h1 {
   text-align: center;
-  color: rgb(54, 54, 54);
-  text-shadow: 2px 2px black;
+  color: blue;
+  text-shadow: 2px 2px gold;
   font-size: 350%;
 }
 #email-input {
   background: transparent;
   border: none;
-  text-shadow: 2px 2px black;
+  /* text-shadow: 2px 2px blue; */
+  color: black;
   font-size: 200%;
 }
 #password-input {
   background: transparent;
   border: none;
-  text-shadow: 2px 2px black;
+  /* text-shadow: 2px 2px blue; */
+  color: black;
   font-size: 200%;
 }
 
 ::placeholder { 
-  color: black;
+  color: gold;
   opacity: 1; 
 }
 
@@ -57,7 +59,7 @@ label {
  }
 
  #buttonA {
-   font-size: 24px;
+   font-size: 36px;
    color: green;
    text-shadow: 2px 2px black;
    text-align: center;
