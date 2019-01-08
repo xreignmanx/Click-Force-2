@@ -129,6 +129,7 @@ module.exports = function (app) {
   // Route for getting high score data from unity
   app.post("/api/scoreboard", function (req, res) {
     console.log(req.body);
+    // req.body.User.Includes()
     db.scoreBoard.create({
       User: req.body.user,
       Score: req.body.score,
