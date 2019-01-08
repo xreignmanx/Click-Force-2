@@ -45,7 +45,7 @@ module.exports = function (app) {
           }).then(function(){
 
             console.log("update succesful");
-            res.redirect("/")
+            res.json("/")
             // there should be something to interact with the user telling them that their account is now authenticated
           })  
         }
@@ -96,7 +96,7 @@ module.exports = function (app) {
         console.log(info);
       });
     }).then(function () {
-      res.redirect(307, "/api/login");
+      res.json("/verify");
     }).then(function (err) {
       console.log(err);
       res.json(err);
