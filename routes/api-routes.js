@@ -29,6 +29,7 @@ module.exports = function (app) {
 
       if (!user) {
         console.log("There is no user with this information");
+
          //there should be something to interact with the user telling them that there is no account with this token
       } else {
         
