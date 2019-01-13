@@ -38,7 +38,7 @@ db.sequelize.sync().then(function() {
   var server = app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
-
+  //small editation
   //initalizing the usage of Socket! 
   var io = socket(server);
 
