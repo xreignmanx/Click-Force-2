@@ -28,6 +28,8 @@
 
   body{
     background-image: url(../assets/img/wall.jpg);
+    align-content: center;
+    background-size: 100%;
     font-family: blackwoodCastle;
   }
   

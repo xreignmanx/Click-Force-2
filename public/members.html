@@ -12,27 +12,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/chatstyle.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 
 <body>
 
-  <!-- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-
-      </div>
-    </div>
-  </nav> -->
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2 class="member-name">WELCOME</h2>
-
+<!-- Link Button to gameplay -->
         <button><a href='Builds\index.html'>Play Game</a></button>
       </div>
     </div>
   </div>
-
+<!-- Chat boxes -->
   <div class="container" id="chat-area">
     <div id="group-chat">
       <div id="chat-window">
@@ -40,21 +34,26 @@
         <div id="feedback"></div>
       </div>
     </div>
-
-    <!-- <input id="handle" type="text" placeholder="Handle" /> -->
+<!-- Send Button -->
     <input id="message" type="text" placeholder="Message" />
     <button id="send">Send</button>
     <div class="row">
-        <div class="col-md-4">   
+        <div class="col-md-4">  
+ <!--Logout button  -->
           <a id="outButton" href="/logout">Logout</a></div>
         <div class="col-md-4"></div>
         <div class="col-md-4">
+<!-- Add timer -->
           <div id="timer"></div>
         </div>
       </div>
   </div>
-       
-  
+<!-- Add Audio -->
+    <audio autoplay hidden loop> 
+      <source src="assets/sounds/background.mp3" type="audio/mp3">
+
+    </audio>
+<!-- Add JS -->
   <script type="text/javascript" src="js/members.js"></script>
   <script src="js/chat.js"></script>
   

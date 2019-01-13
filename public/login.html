@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- This is the home page -->
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
@@ -11,7 +11,9 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <link href="stylesheets/style.css" rel="stylesheet">
 
+
 </head>
+<!-- Fade in Effect -->
 <body id="loginMain" class="wrapper animated fadeIn">
 <br><br><br>
   <div class="container">
@@ -22,14 +24,16 @@
               <form class="login">
                 <br><br>
                 <h1>CLICK FORCE</h1>
+                <!-- Email form -->
                 <div class="form-group">
                   <label for="exampleInputEmail1">Your Place of Mischievious Doings</label>
-                  <input type="email" class="form-control" id="email-input" placeholder="NinnyHen@someplace.com">
+                  <input type="email" class="form-control" id="email-input">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Magical Word of Passage</label>
-                  <input type="password" class="form-control" id="password-input" placeholder="ABACADABARA"> 
+                  <input type="password" class="form-control" id="password-input"> 
                 </div>
+                <!-- Buttons -->
                 <div class="row" id="buttons">
                     <div class="col-xs-6 col-sm-6 col-md-6"><a type="submit" id="button1" role="button">ENTER!</div>               
                     <div class="col-xs-6 col-sm-6 col-md-6"><a id="button2" href="./signup.html" role="button">REGISTER</a></div>               
@@ -41,14 +45,13 @@
       <div class="col-xs-1 col-sm-1 col-md-1"></div>
     </div>
   </div>
-
+<!-- Add JS -->
   <script type="text/javascript" src="js/login.js"></script>
-  <!-- <audio src="assets/sounds/Signon.mp3" loop="true" hidden="true" autostart="true" type="audio/mp3"></audio>   -->
-  <!-- <audio autoplay loop><source src="assets/sounds/Signon.mp3"></audio> -->
-    <audio autoplay hidden loop> 
-        <source src="assets/sounds/Signon.mp3">
+<!-- Add audio loop -->
+  <audio autoplay hidden loop> 
+      <source src="assets/sounds/Signon.mp3" type="audio/mp3">
 
-      </audio>
+    </audio>
 
 
 </body>
